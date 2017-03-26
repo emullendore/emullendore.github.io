@@ -1,0 +1,56 @@
+.navbar-default{
+  background-color:#AECCFF;
+  border-radius: 0;
+  background-image: none;
+}
+
+.navbar-default{
+	background-color: #AECCFF;
+}
+
+.portfolio-thumbnail img {
+height: 250px;
+}
+
+.portfolio-page-image {
+	display: block;
+	margin-right: auto;
+}
+
+body { padding-top: 70px;
+}
+
+.portfolio-page-text {
+	text-align: center;
+	font-size: 14pt;
+	font-family: Avenir;
+}
+
+.header {
+	text-align: center;
+	font-family: Avenir;
+}
+
+.photo {
+	text-align: center}
+
+.aboutme {
+	text-align: center;
+	font-family: Avenir; }
+
+.container {
+	font-family: Avenir;
+}
+
+ .jumbotron-container {
+    padding-bottom: 10px;
+    padding-top: 0px;
+    text-align: center;
+    font-family: Avenir;
+    font-size: 40;
+}
+
+.jumbotron {
+	background-color: #ffffff;
+	background-size: cover;
+	min-height: 200px; }
