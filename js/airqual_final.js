@@ -139,6 +139,7 @@ function processData(data){
 };
 
 //ACTIVITY 6
+console.log(test,test);
 //5th Operator: overlay of coal-fired power plants
 function addCoalPlants(response, map) {
   var pPlantMarkerOptions={
