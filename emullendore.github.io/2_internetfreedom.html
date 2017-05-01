@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="keywords" content="maps, cartography"/>
+	<title>Ekaterina Mullendore</title>
+	<script type="text/javascript" src="js/main.js"></script>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<nav id="custom-navbar" class="navbar navbar-default navbar-fixed-top main-navbar custom-navbar">
+	<link href="css/style.css"/>
+	<div class="container">
+			<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="glyphicon glyphicon-menu-hamburger"></span>
+										<span class="menu">Menu</span>
+								</button>
+								<a class="navbar-brand" href="index.html">Ekateirna Mullendore</a>
+							</div>
+							<div id="navbar" class="collapse navbar-collapse">
+									<ul class="nav navbar-nav">
+												<!--<li><a href="index.html">Portfolio</a></li>-->
+												<!-- <li><a href="about.html">About</a></li> -->
+												<li><a href="resume.html">Resume</a></li>
+								 </ul>
+						</div>
+				</div>
+</nav>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Internet Freedom</title>
+
+		<!--put your external stylesheet links here-->
+		<link rel="stylesheet" href="css/styleIF.css"/>
+		<!--[if IE<9]>
+			<link rel="stylesheet" href="css/style.ie.css">
+		<![endif]-->
+	<h1 id="header">Internet Freedom and Censorship</h1><h2 id="subheader"><b>// an analysis of access, political rights, civil liberties, and internet filtering around the world</b></h2>
+	</head>
+	<body>
+		<!--put your initial page content here-->
+
+
+		<script type="text/javascript" src="lib/d3.js"></script>
+		<script type="text/javascript" src="lib/simple_statistics.min.js"></script>
+		<script src="https://d3js.org/d3-queue.v2.min.js"></script>
+		<script src="http://d3js.org/topojson.v1.min.js"></script>
+		<script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/mainIF.js"></script>
+		<div></div>
+
+		<p id="title2" style= "font-family:sans-serif"> As defined by the U.S. Department of State, <b>internet freedom</b> ensures that "any child,
+			born <b>anywhere in the world</b>, has access to the global Internet as an open platform on which to <b>innovate, learn, organize, and express</b> herself free from undue interference or censorship."
+			Yet, this right is restricted everywhere around the world under the direction of authoritarian leaders. As you explore the map and chart, you'll see that
+			the	extent of censorship and access varies greatly by nation.
+		</style></p>
+
+	<div id="text">
+			<p><p><b>// Internet Users per 100 People and Average Connection Speed</b></p>As connectivity grows at an
+			ever-increasing rate, the importance of reliable internet access for all has become vital. Countries with lower internet access access
+			can miss out on opportunies for furthering education, increasing productivity, and building communities over the web.<sup>[1][2]</sup><p></p>
+
+			<p><b>// Freedom House Ratings for Political Rights and Civil Liberties</b></p>The organization Freedom House examines the freedoms and rights enjoyed by
+			citizens around the world. Political rights are assessed by a country's electoral process, political participation, and
+			how effective the government fucntions. Civil liberties look into freedom of expression, right to organize, as well as personal autonomy. On
+			a scale of 1-7, 1 = most free and 7 = least free. <sup>[3][4]</sup><p></p>
+
+			<!-- <p><b>// OpenNet Initiative Ratings for Political Censorship</b></p><p>This organization looks directly at freedoms and liberties
+			as they relate to internet filtering and surveillance around the world. One of the four themes in their assessment, Political,
+			focuses on web sites that may express oposition to a country's government. Conent could relate to human rights, freedom of expression, minority
+			rights, and religious movements. On a scale of 0-4, 0 = no evidence of filtering and 4 = pervasive filtering for selected countries in this study.<sup>[5]</sup></p> -->
+
+	<div id="sources">
+		<p><b>Katya Mullendore</b>  //  April 2016</p>
+		<p><sup>[1]</sup> World Bank: <a href="http://data.worldbank.org/indicator/IT.NET.USER.P2/countries?order=wbapi_data_value_2014%20wbapi_data_value%20wbapi_data_value-last&sort=desc&display=default">Internet users (per 100 people)</a>
+		<sup>[2]</sup> , <a href="http://data.worldbank.org/indicator/IT.NET.SECR.P6">Secure Internet servers (per 1 million people)</a>
+		<sup>[3][4]</sup> Freedom House: <a href="https://freedomhouse.org/report/freedom-world-2016/table-scores">Freedom in the World 2016 Table of Country Scores</a>
+		<!-- <sup>[5]</sup> Open Net Initiative: <a href="https://opennet.net/research/data">Filtering Data - Political Rights</a> -->
+</div>
+<script>
+	$( document ).ready(function() {
+			$('[data-toggle="tooltip"]').tooltip({'placement': 'top'});
+	});
+	</script>
+
+
+</html>
