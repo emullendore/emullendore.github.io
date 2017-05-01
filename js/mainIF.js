@@ -214,29 +214,38 @@ function setLabel(props){
     }
 };
 
+
+
 //to move label
 function moveLabel(){
 //get label dimensions to determining positioning when mousing over
-var labelWidth=d3.select(".infoLabel")
-    .node()
-    .getBoundingClientRect()
-    .width;
-//give to possible positions depending on position of mouse, distance to border
-var x1=d3.event.clientX,
-    y1=d3.event.clientY-35,
-    x2=d3.event.clientX-labelWidth,
-    y2=d3.event.clientY+10;
+// var labelWidth=d3.select(".infoLabel")
+//     .node()
+//     .getBoundingClientRect()
+//     .width;
 
-//horizontal label coordinate, testing for overflow
-var x = d3.event.clientX > window.innerWidth - labelWidth - 10 ? x2 : x1;
-//vertical label coordinate, testing for overflow
-var y = d3.event.clientY < 75 ? y2 : y1;
-//put these specifications into action, indicate in .style of infolabel
-  d3.select(".infoLabel")
-      .style({
-        "left":x+"px",
-        "top": y + "px"
-      });
+// var labelWidth=d3.select(".infoLabel")
+//     .node()
+//     .style({"width": "10"});
+
+
+
+//give to possible positions depending on position of mouse, distance to border
+// var x1=d3.event.clientX,
+//     y1=d3.event.clientY-35,
+//     x2=d3.event.clientX-labelWidth,
+//     y2=d3.event.clientY+10;
+//
+// //horizontal label coordinate, testing for overflow
+// var x = d3.event.clientX > window.innerWidth - labelWidth - 10 ? x2 : x1;
+// //vertical label coordinate, testing for overflow
+// var y = d3.event.clientY < 75 ? y2 : y1;
+// //put these specifications into action, indicate in .style of infolabel
+//   d3.select(".infoLabel")
+//       .style({
+//         "left":x+"px",
+//         "top": y + "px"
+//       });
 };
 
 function setGraticule(map,path){

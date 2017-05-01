@@ -12,7 +12,10 @@
 }
 
 
+.navbar-brand{
+    font-family: 'Asar', serif;;
 
+}
 
 .portfolio-thumbnail img {
 height: 250px;
