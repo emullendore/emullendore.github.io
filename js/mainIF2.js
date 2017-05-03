@@ -148,16 +148,6 @@ function highlight(props){
      setLabel(props);
 };
 
-function highlightBars (props) {
-  var selected=d3.selectAll("."+props.adm0_a3)
-      .style({
-          "fill-opacity":"1",
-          "stroke":"white",
-          "stroke-width":"2"
-      })
-};
-
-
 //implementing dehighlight function for mouseout
 function dehighlight(props){
 
@@ -175,9 +165,6 @@ function dehighlight(props){
         //  }
       });
   //used to determine previous style so when you mouseoff and dehighlight, it returns to that previous style
-
-
-
   function getStyle(element, styleName){
 
     var styleText=d3.select(element)
@@ -197,25 +184,17 @@ function setLabel(props){
 
   if (isNaN(props[expressed])){//if there is no value, state No Data
     var labelAttribute="<h1>"+labelTitles[expressed]+"<b>"+":   "+'No Data'+"</b></h><h2>";
-
     var infoLabel=d3.select("body")
           .append("div")
           .attr({
               "class": "infoLabel",
               "id":props.adm0_a3+"_label"
           })
-
-          .html(labelAttribute)
-          .style({
-            "font-size":"20px"
-          });
+          .html(labelAttribute);
 
       var countryName=infoLabel.append("body")
           .attr("class","labelname")
-          .html(props.name)
-          .style({
-            "font-size":"20px"
-          });
+          .html(props.name);
 
   }else{//else state the value
   var labelAttribute="<h1>"+labelTitles[expressed]+"<b>"+":   "+props[expressed]+"</b></h><h2>";
@@ -226,46 +205,27 @@ function setLabel(props){
             "class": "infoLabel",
             "id":"."+props.adm0_a3
         })
-        .style({
-          "font-size":"20px"
-        })
         .html(labelAttribute);
-
-
 
     var countryName=infoLabel.append("body")
         .attr("class","labelname")
-        .html(props.name)
-        .style({
-          "font-size":"20px",
-          "margin-bottom":"-3px"
-        });
+        .html(props.name);
 
     }
 };
 
-
-
 //to move label
 function moveLabel(){
 //get label dimensions to determining positioning when mousing over
- var labelWidth=d3.select(".infoLabel")
-     .node()
-     .getBoundingClientRect()
-     .width
-
-
-// var labelWidth=d3.select(".infoLabel")
-//     .node()
-//     .style({"width": "10"});
-
-
-
+var labelWidth=d3.select(".infoLabel")
+    .node()
+    .getBoundingClientRect()
+    .width;
 //give to possible positions depending on position of mouse, distance to border
 var x1=d3.event.clientX,
-    y1=d3.event.clientY-35,
+    y1=d3.event.clientY-75,
     x2=d3.event.clientX-labelWidth,
-    y2=d3.event.clientY+10;
+    y2=d3.event.clientY+100;
 
 //horizontal label coordinate, testing for overflow
 var x = d3.event.clientX > window.innerWidth - labelWidth - 10 ? x2 : x1;
@@ -275,9 +235,7 @@ var y = d3.event.clientY < 75 ? y2 : y1;
   d3.select(".infoLabel")
       .style({
         "left":x+"px",
-        "top": y + "px",
-        "font-size":"20px"
-
+        "top": y + "px"
       });
 };
 
@@ -417,7 +375,7 @@ function setChart(csvData, worldCountries, colorScale){
 
       .on("mouseover", highlight)//highlight selected  bars
       .on("mouseout", dehighlight)//de highlight selected bars with mouseout
-      .on("mousemove", moveLabel);//follow label with cursor
+      // .on("mousemove", moveLabel);//follow label with cursor
 
     //for returing style after an interaction
     var desc=bars.append("desc")
@@ -494,7 +452,7 @@ function changeAttribute(attribute, csvData){
       .delay(function(d,i){
         return i*8
       })
-      .duration(80)
+      .duration(90)
       //determine position on x axis by number of elements, incl leftPadding
       .attr("x", function(d,i){
         return i*(chartInnerWidth/csvData.length) + leftPadding;

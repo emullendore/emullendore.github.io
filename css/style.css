@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body{background-image: url("/images/gplay.png");
+      background-color: #e2f8ff !important;}
+
+
+lightgrey@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 
 
 .navbar-default{
@@ -8,25 +13,46 @@
 }
 
 .navbar-default{
-	background-color:#ddd;
+	background-color: green;
+}
+
+.col-6.col-sm-3 {
+  font-family: 'Asar', serif;
+  font-size: 26px;
+  font-style: italic;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 5%;
+  margin-top: -20%
+  align-items: center;
+}
+
+.row {
+  align-content: center;
 }
 
 
 .navbar-brand{
-    font-family: 'Asar', serif;;
+    font-family: 'Asar', serif;
+    font-size: 26px;
 
 }
 
 .portfolio-thumbnail img {
-height: 250px;
+height: 70px;
+}
+
+.thumbnail.portfolio-thumbnail {
+  height: 50%;
 }
 
 .portfolio-page-image {
 	display: block;
 	margin-right: auto;
+  height: 90px;
 }
 
-body { padding-top: 70px;
+body { padding-top: 30px;
 }
 
 .p {
@@ -44,6 +70,12 @@ body { padding-top: 70px;
 	font-family: 'Asar', serif;;
 }
 
+.nav.navbar-nav{
+  font-size: 20px;
+  font-family: 'Asar', serif;
+  color: black;
+}
+
 .photo {
 	text-align: center}
 
@@ -52,6 +84,7 @@ body { padding-top: 70px;
 	font-family: 'Asar', serif;; }
 
 .container {
+  margin: 5%
 	font-family: 'Asar', serif;;
 }
 
@@ -64,7 +97,8 @@ body { padding-top: 70px;
 }
 
 .jumbotron {
-	background-color: #ffffff;
+  /*background-image: url("/images/gplay.png");*/
+  background-color: #def4fb !important;
 	background-size: cover;
 	min-height: 200px; }
 

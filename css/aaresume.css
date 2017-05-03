@@ -1,14 +1,3 @@
-/*
----------------------------------------------------------------------------------
-	STRIPPED DOWN RESUME TEMPLATE
-    html resume
-
-    v0.9: 5/28/09
-
-    design and code by: thingsthatarebrown.com
-                        (matt brown)
----------------------------------------------------------------------------------
-*/
 
 
 .msg { padding: 10px; background: #222; position: relative; }
@@ -17,7 +6,7 @@
 .msg a:hover { background: #266400; }
 
 /* //-- yui-grids style overrides -- */
-body { font-family: Avenir; color: #444; }
+body { font-family: Avenir; color: black; }
 #inner { padding: 10px 80px; margin: 80px auto; background: white; border: solid #666; border-width: 8px 0 2px 0; }
 .yui-gf { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
 
@@ -32,13 +21,15 @@ body { font-family: Avenir; color: #444; }
 
 /* //-- core typography and style -- */
 #hd h1 { font-size: 48px; text-transform: uppercase; letter-spacing: 3px; }
-h2 { font-size: 152% }
-h3, h4 { font-size: 122%; }
+h2 { font-size: 152%; margin-top:5px}
+h3 { font-size: 122%; font-weight: bold; margin-top: 10px; color: black;}
+h4 { font-size: 122%; }
+
 h1, h2, h3, h4 { color: #333; }
-p { font-size: 100%; line-height: 18px; padding-right: 3em; }
+p { font-size: 13px; line-height: 18px; padding-right: 3em; }
 a { color: #990003 }
 a:hover { text-decoration: none; }
-strong { font-weight: bold; }
+strong { font-weight:bolder; }
 li { line-height: 24px; border-bottom: 1px solid #ccc; }
 p.enlarge { font-size: 144%; padding-right: 6.5em; line-height: 24px; }
 p.enlarge span { color: #000 }
