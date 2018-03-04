@@ -2,6 +2,12 @@ body{
   background-color: white !important;
 
 }
+
+html {
+  background-color: white;
+}
+
+
 #header{
   font-family: monospace;
   font-size: 40px;

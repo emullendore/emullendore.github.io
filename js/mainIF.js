@@ -193,56 +193,56 @@ function dehighlight(props){
 };
 
 //implement label, provide content based on certain properties
-function setLabel(props){
-
-  if (isNaN(props[expressed])){//if there is no value, state No Data
-    var labelAttribute="<h1>"+labelTitles[expressed]+"<b>"+":   "+'No Data'+"</b></h><h2>";
-
-    var infoLabel=d3.select("body")
-          .append("div")
-          .attr({
-              "class": "infoLabel",
-              "id":props.adm0_a3+"_label"
-          })
-
-          .html(labelAttribute)
-          .style({
-            "font-size":"20px"
-          });
-
-      var countryName=infoLabel.append("body")
-          .attr("class","labelname")
-          .html(props.name)
-          .style({
-            "font-size":"20px"
-          });
-
-  }else{//else state the value
-  var labelAttribute="<h1>"+labelTitles[expressed]+"<b>"+":   "+props[expressed]+"</b></h><h2>";
-
-  var infoLabel=d3.select("body")
-        .append("div")
-        .attr({
-            "class": "infoLabel",
-            "id":"."+props.adm0_a3
-        })
-        .style({
-          "font-size":"20px"
-        })
-        .html(labelAttribute);
-
-
-
-    var countryName=infoLabel.append("body")
-        .attr("class","labelname")
-        .html(props.name)
-        .style({
-          "font-size":"20px",
-          "margin-bottom":"-3px"
-        });
-
-    }
-};
+// function setLabel(props){
+//
+//   if (isNaN(props[expressed])){//if there is no value, state No Data
+//     var labelAttribute="<h1>"+labelTitles[expressed]+"<b>"+":   "+'No Data'+"</b></h><h2>";
+//
+//     var infoLabel=d3.select("body")
+//           .append("div")
+//           .attr({
+//               "class": "infoLabel",
+//               "id":props.adm0_a3+"_label"
+//           })
+//
+//           .html(labelAttribute)
+//           .style({
+//             "font-size":"20px"
+//           });
+//
+//       var countryName=infoLabel.append("body")
+//           .attr("class","labelname")
+//           .html(props.name)
+//           .style({
+//             "font-size":"20px"
+//           });
+//
+//   } else {//else state the value
+//   var labelAttribute="<h1>"+labelTitles[expressed]+"<b>"+":   "+props[expressed]+"</b></h><h2>";
+//
+//   var infoLabel=d3.select("body")
+//         .append("div")
+//         .attr({
+//             "class": "infoLabel",
+//             "id":"."+props.adm0_a3
+//         })
+//         .style({
+//           "font-size":"20px"
+//         })
+//         .html(labelAttribute);
+//
+//
+//
+//     var countryName=infoLabel.append("body")
+//         .attr("class","labelname")
+//         .html(props.name)
+//         .style({
+//           "font-size":"20px",
+//           "margin-bottom":"-3px"
+//         });
+//
+//     }
+// };
 
 
 
