@@ -5,7 +5,6 @@ body{background-image: url("/images/gplay.png");
 lightgrey@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 
-
 .navbar-default{
   background-color:#ddd;
   border-radius: 0;
@@ -43,6 +42,8 @@ height: 70px;
 }
 
 .thumbnail.portfolio-thumbnail {
+  border: white 6px solid;
+  box-shadow: 2px 2px 2px #aaaaaa;
   height: 50%;
 }
 
@@ -98,9 +99,12 @@ body { padding-top: 30px;
 
 .jumbotron {
   /*background-image: url("/images/gplay.png");*/
-  background-color: #def4fb !important;
+  color:#daf5fb;
+  background-color: rgba(119,119,119, .4) !important;
+  letter-spacing: 3px;
+  text-shadow: 2px 3px rgb(104,104,104);
 	background-size: cover;
-	min-height: 200px; }
+	min-height: 10px; }
 
 .descrip {
   margin-left: 10%;

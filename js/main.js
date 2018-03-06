@@ -3,7 +3,7 @@ function DoTheThing(){
 $('.portfolio-thumbnail').on({
     mouseenter: function() {
 
-        $(this).animate({opacity: 0.5},200)
+        $(this).animate({opacity: 0.4},200)
     },
     mouseleave: function() {
 
