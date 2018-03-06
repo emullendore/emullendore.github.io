@@ -193,56 +193,56 @@ function dehighlight(props){
 };
 
 //implement label, provide content based on certain properties
-// function setLabel(props){
-//
-//   if (isNaN(props[expressed])){//if there is no value, state No Data
-//     var labelAttribute="<h1>"+labelTitles[expressed]+"<b>"+":   "+'No Data'+"</b></h><h2>";
-//
-//     var infoLabel=d3.select("body")
-//           .append("div")
-//           .attr({
-//               "class": "infoLabel",
-//               "id":props.adm0_a3+"_label"
-//           })
-//
-//           .html(labelAttribute)
-//           .style({
-//             "font-size":"20px"
-//           });
-//
-//       var countryName=infoLabel.append("body")
-//           .attr("class","labelname")
-//           .html(props.name)
-//           .style({
-//             "font-size":"20px"
-//           });
-//
-//   } else {//else state the value
-//   var labelAttribute="<h1>"+labelTitles[expressed]+"<b>"+":   "+props[expressed]+"</b></h><h2>";
-//
-//   var infoLabel=d3.select("body")
-//         .append("div")
-//         .attr({
-//             "class": "infoLabel",
-//             "id":"."+props.adm0_a3
-//         })
-//         .style({
-//           "font-size":"20px"
-//         })
-//         .html(labelAttribute);
-//
-//
-//
-//     var countryName=infoLabel.append("body")
-//         .attr("class","labelname")
-//         .html(props.name)
-//         .style({
-//           "font-size":"20px",
-//           "margin-bottom":"-3px"
-//         });
-//
-//     }
-// };
+function setLabel(props){
+
+  if (isNaN(props[expressed])){//if there is no value, state No Data
+    var labelAttribute=labelTitles[expressed]+": "+'No Data';
+
+    var infoLabel=d3.select("body")
+          .append("div")
+          .attr({
+              "class": "infoLabel",
+              "id":props.adm0_a3+"_label"
+          })
+
+          .html(labelAttribute)
+          .style({
+            "font-size":"20px"
+          });
+
+      var countryName=infoLabel.append("body")
+          .attr("class","labelname")
+          .html(props.name)
+          .style({
+            "font-size":"20px"
+          });
+
+  } else {//else state the value
+  var labelAttribute=labelTitles[expressed]+": "+props[expressed];
+
+  var infoLabel=d3.select("body")
+        .append("div")
+        .attr({
+            "class": "infoLabel",
+            "id":"."+props.adm0_a3
+        })
+        .style({
+          "font-size":"20px"
+        })
+        .html(labelAttribute);
+
+
+
+    var countryName=infoLabel.append("body")
+        .attr("class","labelname")
+        .html(props.name)
+        .style({
+          "font-size":"20px",
+          "margin-bottom":"-3px"
+        });
+
+    }
+};
 
 
 
@@ -262,10 +262,10 @@ function moveLabel(){
 
 
 //give to possible positions depending on position of mouse, distance to border
-var x1=d3.event.clientX,
-    y1=d3.event.clientY-35,
-    x2=d3.event.clientX-labelWidth,
-    y2=d3.event.clientY+10;
+var x1 = d3.event.clientX + 10,
+      y1 = d3.event.clientY - 75,
+      x2 = d3.event.clientX - labelWidth - 10,
+      y2 = d3.event.clientY + 25;
 
 //horizontal label coordinate, testing for overflow
 var x = d3.event.clientX > window.innerWidth - labelWidth - 10 ? x2 : x1;
@@ -276,7 +276,7 @@ var y = d3.event.clientY < 75 ? y2 : y1;
       .style({
         "left":x+"px",
         "top": y + "px",
-        "font-size":"20px"
+        // "font-size":"20px"
 
       });
 };
@@ -415,7 +415,7 @@ function setChart(csvData, worldCountries, colorScale){
         return choropleth(d, colorScale)
       })
 
-      .on("mouseover", highlight)//highlight selected  bars
+      .on("mouseover", highlightBars)//highlight selected  bars
       .on("mouseout", dehighlight)//de highlight selected bars with mouseout
       .on("mousemove", moveLabel);//follow label with cursor
 

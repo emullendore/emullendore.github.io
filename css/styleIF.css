@@ -57,12 +57,13 @@ html {
   background-color: white !important;
 }
 .infoLabel {
-    font-size: 13px;
     font-family: sans-serif;
     background-size: contain;
     /*border: 2px solid grey;*/
-    background-color: rgba(192,192,192, .5);
+    background-color: rgba(192,192,192, .5) !important;
     position: absolute;
+    font-family: monospace;
+    padding: 5px;
     /*height: 100px;
     width: 150px;
     padding-left: 5px;*/
@@ -71,10 +72,11 @@ html {
 
 }
 .labelname {
-  background-color: rgba(192,192,192, .1);
-
+  background-color: rgba(192,192,192, .1) !important;
+  font-family: monospace;
   font-family: sans-serif;
   font-size: 13px;
+  padding: 5px;
   /*padding-bottom: 50px;*/
   font-weight: bold;
   /*margin-left: 2px;*/
