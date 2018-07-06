@@ -11,7 +11,7 @@ body { font-family: Avenir; color: black; }
 #KM {text-align: center; width: 100%; margin-top: 40px; margin-bottom: 35px;margin-left: auto; margin-right: auto;}
 img { border: white 20px solid; box-shadow: 3px 3px 3px #aaaaaa;}
 #inner {padding: 0px 20px 0px 20px; background: white; border: solid #666; border-width: 8px 0 2px 0; }
-.yui-gf {margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
+.yui-gf {margin-bottom: 2em; padding-bottom: 3em; border-bottom: 1px solid #ccc; }
 .yui-u-first {text-align: center;}
 /* //-- header, body, footer -- */
 #hd { margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc }
