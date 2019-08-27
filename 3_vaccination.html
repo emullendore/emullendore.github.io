@@ -1,50 +1,96 @@
 <!DOCTYPE HTML>
 <html lang="en">
+<link href="https://fonts.googleapis.com/css?family=Asar" rel="stylesheet">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<meta name="keywords" content="maps, cartography"/>
-	<link href="https://fonts.googleapis.com/css?family=Asar" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ekaterina Mullendore</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <script type="text/javascript" src="lib/jquery-2.2.0.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Varela&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/styleCalifornia.css">
 
-	<title>Ekaterina Mullendore</title>
-
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-<nav id="custom-navbar" class="navbar navbar-default navbar-fixed-top main-navbar custom-navbar">
-	<link href="css/style.css"/>
-	<div class="container">
-			<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="glyphicon glyphicon-menu-hamburger"></span>
-										<span class="menu">Menu</span>
-								</button>
-								<a class="navbar-brand" href="index.html">Ekaterina Mullendore</a>
-							</div>
-							<div id="navbar" class="collapse navbar-collapse">
-									<ul class="nav navbar-nav">
-												<!--<li><a href="index.html">Portfolio</a></li>-->
-												<!-- <li><a href="about.html">About</a></li> -->
-												<li><a href="resume.html">Resume</a></li>
-								 </ul>
-						</div>
-				</div>
-</nav>
 
-<div class="descrip"
-<h><b>The Immunity Mutiny</b></h>
-<p></p>
+    <nav class="navbar navbar-secondary">
+        <h1><a href="index.html">Ekaterina<br /> Mullendore</h1></a>
 
-<p> In collaboration with fellow classmates, we created an interactive data vizualitaion
-  depicting the alarming trends in vaccination rates across America and highlighted specific states.
-	My contribution detailed California's measles epidemic.
-</p>
-<p>
-  This map can be found <a href="http://geog575-spring2016.github.io/immunity-mutiny/" target="_blank">here </a>
-</p>
+        <a href="resume.html">Resume</a>
+
+    </nav>
+    <main class="vaccination-map">
+
+<div class="project-description">
+  <h2>The Immunity Mutiny</h2>
+
+  <p> In collaboration with fellow classmates, we created an interactive data vizualitaion
+    depicting the alarming trends in vaccination rates across America and highlighted specific states.
+  	My contribution detailed California's measles epidemic.
+  </p>
+  <div id="california-wrapper">
+    <div id ="california-header">
+      <h3 id="California-title">California: A Measles Outbreak and a Silver Lining</h3>
+    </div>
+    <div class="map-legend">
+      <div id="california-map"></div>
+      <div id = "california-legend-controls">
+          <div id = "californiaButtons">
+              <label>Measles Outbreaks
+                      <br><input type="radio" name="map" id='propsymbs13' class ='radio' value="msls" />
+                      2013
+                      <br><input type="radio" name="map" id='propsymbs14' class ='radio' value="msls" checked="checked" />
+                      2014
+              </label>
+              <br>
+              <label>Vaccine Coverage Rates
+                  <br><input type="radio" name="map" id='vc13'  class ='radio' value="vc13" />
+                      2013-2014
+                  <br><input type="radio" name="map" id='vc15'  class ='radio' value="vc15" />
+                      2015-2016
+              </label>
+              <br>
+              <label>Personal Belief Exemptions
+                      <br><input type="radio" name="map" id='pb13'  class ='radio' value="pb13" />
+                      2013-2014
+                      <br><input type="radio" name="map" id='pb15'  class ='radio' value="pb15" />
+                      2015-2016
+              </label>
+              <br>
+              <div id="california-legend-vc"></div>
+          </div>
+      </div>
+      <!-- <div id="california-legend-vc"></div> -->
+    </div>
+    <div id="california-text">
+      <p class="california-paragraph">California has also witnessed the tragic effects of declining immunization rates. In December 2014, Disneyland, located in Orange County, experienced the symptoms of low vaccination rates first-hand. A <a href="http://www.webmd.com/children/vaccines/news/20150316/low-vaccination-rates-likely-behind-disney-measles-outbreak-study"> measles outbreak</a> swept across the park. At least 147 cases were reported. The source is believed to have been an international visitor. The outbreak was attributed to the lowest rates of vaccination coverage in the state in the past five years. This prompted the government and health officials to scrutinize the state of vaccination in California.</p>
+      <p class="california-paragraph">In reaction to the Disneyland outbreak, California <a href="http://www.forbes.comicons/sites/tarahaelle/2015/06/30/california-vaccination-bill-sb-277-signed-by-governor-becomes-law/#1214a9f0a123">California Senate Bill 277</a> was drafted. In an effort to increase coverage, this bill removes the option of personal belief or religious exemptions from vaccinations for a child entering kindergarten in a public school. This makes California only one of three states in America to have such a law. In response to the bill, advocates have adamantly <a href="https://news.stanford.edu/2015/07/23/exemptions-vaccine-model-072315/">fought against the bill</a>, launching petitions and efforts to recall elected officials that voted for the bill. Some argue that SB277 is unconstitutional and violates medical freedom. Additionally, the bill is also believed to infringe upon the right to a public education, as children are now prohibited from entering a public school without the required vaccinations.</p>
+      <p class="california-paragraph">While statistics on vaccination since the enactment of SB377 have yet to be released, California is already moving in the direction of increased coverage and decreased exemptions. Between the 2015-2016 and 2013-2014 school years, personal belief exemption rates decreased from 3.15% to 2.37%. Also during this time, coverage increased from 90.2% to 92.9%. While it is actually <a href="http://www.wired.com/2015/06/sb277-california-is-now-the-perfect-test-lab-for-vaccine-laws/"> somewhat difficult</a> to draw direct correlations between legislation and disease numbers, considering the impacts that SB377 will have on coverage in time will stir important dialogue regarding the impacts that government can have on public health and whether the individual rights of its citizens are preserved.</p>
+  </div>
+
+
+  </div>
+
+
+
 </div>
+<script type="text/javascript" src="lib/topojson.v1.min.js"></script>
+<script type="text/javascript" src="lib/d3.min.js"></script>
+<script type="text/javascript" src="lib/d3-queue.js"></script>
+<script type="text/javascript" src="js/california.js"></script>
+
+</main>
+<footer>
+    <p>
+        Contact <a href="mailto:ekmullendore@gmail.com">ekmullendore@gmail.com</a>
+    </p>
+</footer>
+
 </html>

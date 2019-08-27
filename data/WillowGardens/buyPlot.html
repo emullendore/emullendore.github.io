@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beautiful gardens are at the heart of any community. Willow Gardens' provide an entry point for individuals and households to get involved in the whole project. " />
+    <title>Willow Gardens | Gardening Tips</title>
+    <link href="https://fonts.googleapis.com/css?family=Enriqueta" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagesicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imagesicons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+</head>
+
+<body>
+    <a class="skiplink" href="#content-container">Skip to main content</a>
+
+    <nav class="navbar navbar-index" aria-label="main menu">
+        <img id="logo" src="images/logo.png" alt="Willow Gardens logo">
+        <ul role="menubar">
+            <li role="menuitem"><a href="index.html">Home</a></li>
+            <li role="menuitem" aria-haspopup="true"><a href="#" aria-haspopup="true">Get Involved <span class="arrow">&#9660;</span></a>
+                <ul class="dropdown-content" role="menu">
+                    <li role="menuitem"><a href="buyPlot.html">Apply For a Plot</a></li>
+                    <li role="menuitem"><a href="#">Volunteer</a></li>
+                    <li role="menuitem"><a href="#">Field Trips & Tours</a></li>
+                    <li role="menuitem"><a href="#">For the Kids</a></li>
+                </ul>
+            </li>
+            <li role="menuitem" aria-haspopup="true"><a href="#" aria-haspopup="true">Get Educated <span class="arrow">&#9660;</span></a>
+                <ul class="dropdown-content" role="menu">
+                    <li role="menuitem"><a href="#">Workshops & Courses</a></li>
+                    <li role="menuitem"><a href="gardeningTips.html">Gardening Tips</a></li>
+                </ul>
+            </li>
+            <li role="menuitem"><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="content-container content-form" id="content-container">
+            <h1>Garden Plot Application</h1>
+
+            <section>
+                <h2>General Plot Information</h2>
+
+                <p>Our garden plots measure approximately 20' x 20' (400 sq.ft.). The maximum number of plots per gardener is 4 plots. Gardeners may work in their plots at any time of the year, provided they follow the garden rules. Only organic gardening methods are allowed. We do not till any sections of our gardens, which allows gardeners to plant perennials such as asparagus and strawberries and leave up fences, if desired, throughout the year.</p>
+
+                <p>$15, $43, or $78 per plot/year, depending on your income level and size of household/garden family.</p>
+
+                <p>Water is provided on site throughout the season. Garden tools are available for everyone to use. Free wood chips are provided gardener use. We offer hay and row cover for sale on our application.</p>
+            </section>
+            <div class="image-container">
+                <img class="produce" src="images/gardenPlot.jpg" alt="garden plot in Willow Gardens" />
+            </div>
+            <section>
+                <h2>Plot Assignment Rules</h2>
+
+                <ol role="menu">
+                    <li role="menuitem">Returning gardeners applying for the same number of plots as last year (must be in good standing).</li>
+                    <li role="menuitem">New gardeners requesting a plot (assigned in order of applicant's proximity to the Willow Gardens).</li>
+                    <li role="menuitem">Returning gardeners requesting one extra plot. After being reassigned the same number of plots you held last year (priority #1), we will consider additional plot requests depending on availability.</li>
+                </ol>
+            </section>
+
+            <div id="buyPlotForm">
+
+                <form action="http://itins3.madisoncollege.edu/echo.php" method="post" role="form">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" name="firstName" id="firstName" required aria-required="true" />
+
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" name="lastName" id="lastName" required aria-required="true" />
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required aria-required="true" />
+
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" name="birthday" id="birthday" />
+
+                    <label for="numberOfPlots">Number of plots:</label>
+                    <em>Limit of 4 plots per gardener</em>
+                    <select name="numberOfPlots" id="numberOfPlots" required aria-required="true">
+                        <option value="">---</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+
+                    <fieldset class="form-radio-group">
+                        <legend>Returning Gardener?:</legend>
+                        <div class="form-radio-group">
+                            <input type="radio" name="returning" id="returningYes" value="yes" />
+                            <label for="returningYes">Yes</label>
+                        </div>
+                        <div class="form-radio-group">
+                            <input type="radio" name="returning" id="returningNo" value="no" />
+                            <label for="returningNo">No</label>
+                        </div>
+                    </fieldset>
+
+                    <input class="submit" aria-label="Submit garden plot application" type="submit" />
+                </form>
+            </div>
+
+            <p id="thanks">Thank you for your interest in Willow Gardens!</p>
+
+        </div>
+    </main>
+    <footer role="contentinfo">
+        <p>&copy; 2019 <a href="index.html">Willow Gardens</a> &#124; <a href="#">Terms of Use</a> &#124; <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+
+</html>

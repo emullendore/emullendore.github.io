@@ -1,0 +1,157 @@
+/*//["#d7191c","#fc8d59","#fadb86","#2fd2d6"]*/
+
+/*CALIFORNIA CSS*/
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-bottom: 2em;
+}
+
+#california-map {
+}
+
+#california-legend-controls {
+  width: 30%;
+}
+
+#california-legend-vc {
+  margin-bottom: 3em;
+  text-align: right;
+}
+
+
+.VClegendContainer{
+    height: 180px;
+    width: 264px;
+    display: none;
+}
+
+.PBElegendContainer{
+    width: 264px;
+    height: 180px;
+    display: none;
+}
+
+#california-text {
+  margin: 3em 12.5%;
+  line-height: 2em;
+}
+
+.california-paragraph {
+  margin: 1em 0;
+}
+
+.california-paragraph > a {
+  color: rgb(71, 188, 191);
+  text-decoration: none;
+}
+
+.california-paragraph > a:visited {
+  color: rgb(71, 188, 191);
+}
+
+.california-paragraph > a:hover {
+  color: rgb(252, 141, 89);
+}
+
+#California-title {
+  text-align: center;
+  margin: 3em auto;
+  font-size: 2em;
+}
+
+/* 575 boilerplate style.css */
+.key path {
+  display: none;
+}
+
+.key line {
+  stroke: #000;
+  shape-rendering: crispEdges;
+  z-index: 10;
+}
+
+.CAlegend-title {
+    font-weight: bold;
+    z-index: 10;
+    float: right;
+}
+
+.CAlegend-box {
+    fill: none;
+    stroke: #888;
+    font-size: 10px;
+    z-index: 10;
+    float: right;
+    width: 21em;
+}
+
+.CAmap{
+  margin-left: 1em;
+  /*z-index: 11;*/
+}
+
+.radio {
+  margin: 1.25em;
+}
+
+.CAtoolTip {
+  font-family: Lato, sans-serif;
+  position:absolute;
+  height:50px;
+  width: 300px;
+  color: #fff;
+  background-color: #000;
+  border: solid thin #000;
+  padding: 10px 10px;
+  border-radius: 15px;
+  text-align: left;
+  vertical-align: middle;
+  pointer-events:none;
+  top: -155px;
+  z-index: 2
+}
+
+#options{
+  float:left;
+  text-align: left;
+  margin-left: 10px;
+}
+
+
+.labelname {
+  /*font-size: 13px;*/
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+
+
+.chartBackground{
+  fill: silver
+}
+
+.chartFrame {
+    fill: none;
+    stroke: #999;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #999;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+/*    font-family: monospace;*/
+    font-weight: bold;
+    font-size: .7em;
+    fill: black;
+}
