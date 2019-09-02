@@ -7,7 +7,7 @@ body {
 .content-container {
   font-family: monospace;
   background: rgb(175,175,175);
-  background: linear-gradient(9deg, rgba(175,175,175,1) 0%, rgba(70,130,179,1) 100%);
+  background: linear-gradient(9deg, #d2d2d2 0%, #81aacc 100%);
 }
 
 .header-container {
@@ -118,4 +118,19 @@ body {
 #temporal-legend {
 	font-weight: bold;
 	font-size: 120%;
+}
+
+/* Media Queries */
+@media (max-width: 979px) {
+  .map-text {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+  .text-container {
+    width: 90%;
+    margin-top: 2em;
+  }
+  #map3 {
+    margin: 0 auto;
+  }
 }

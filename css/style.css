@@ -33,7 +33,7 @@ main {
   display: flex;
   flex-direction: column;
   flex: 1;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 main.adoption-map {
@@ -46,7 +46,7 @@ main.adoption-map {
 
 
 .header-description {
-  margin: 2em 0;
+  margin: 0 0 1em 0;
   line-height: 2em;
   font-size: 1.5em;
   color: white;
@@ -92,6 +92,7 @@ main.adoption-map {
 h1 {
   color: var(--white-color);
   font-size: 3em;
+  margin: 1em 0;
 }
 
 h2 {
@@ -176,6 +177,10 @@ transform: translateY(1em);
 
 .project-link:visited {
   color: var(--primary-color);
+}
+
+.project-link:hover {
+  color: var(--tertiary-color);
 }
 
 .adoption-map-image {
@@ -283,7 +288,7 @@ footer {
 }
 
 footer > p {
-  margin-left: 8%;
+  margin: 0 auto;
 }
 
 footer > p > a {
@@ -294,4 +299,57 @@ footer > p > a {
 
 footer > p > a:hover {
   color: var(--white-color);
+}
+
+/* Media Queries */
+
+@media (max-width: 979px) {
+
+  .header-description {
+    margin: 1.5em 0;
+    line-height: 2em;
+    font-size: 1.3em;
+  }
+
+  /* Selectors and styles affecting screens UP TO 979px (Desktop) */
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    height: 20em;
+  }
+
+  .navbar > a {
+    margin-bottom: 1em;
+  }
+
+
+  h1 {
+    font-size: 2.3em;
+  }
+  .header-description {
+    font-size: 1.1em;
+  }
+  main {
+    margin: 0;
+  }
+
+  section > a {
+    font-size: 2.3em;
+  }
+
+  .resume > section {
+    margin: 0 6%;
+  }
+
+    /* Selectors and styles affecting screens UP TO 767px (Tablet) */
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    height: 25em;
+  }
+    /* Selectors and styles affecting screens UP TO 480px (Phone) */
 }
