@@ -324,12 +324,17 @@ footer > p > a:hover {
     margin-bottom: 1em;
   }
 
-
+  .header {
+    margin-left: 0;
+  }
   h1 {
     font-size: 2.3em;
+    text-align: center;
   }
+
   .header-description {
     font-size: 1.1em;
+    margin: 0 3em;
   }
   main {
     margin: 0;
@@ -343,6 +348,14 @@ footer > p > a:hover {
     margin: 0 6%;
   }
 
+  .navbar-secondary {
+    height: 15em;
+  }
+
+  .navbar-secondary > h1 {
+    margin-top: 1em;
+  }
+
     /* Selectors and styles affecting screens UP TO 767px (Tablet) */
 }
 
@@ -350,6 +363,14 @@ footer > p > a:hover {
   .navbar {
     flex-direction: column;
     height: 25em;
+  }
+
+  .navbar-secondary {
+    height: 10em;
+  }
+
+  .navbar-secondary > h1 {
+    margin-top: 1em;
   }
     /* Selectors and styles affecting screens UP TO 480px (Phone) */
 }

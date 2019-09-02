@@ -52,68 +52,68 @@
 
     function setmap() {
 
-        var width = 500,
-            height = 550;
+      var width = 500,
+          height = 550;
 
-        var CAmap = d3.select("#california-map")
-            .append("svg")
-            .attr("class", "CAmap")
-            .attr("width", width)
-            .attr("height", height);
+      var CAmap = d3.select("#california-map")
+          .append("svg")
+          .attr("class", "CAmap")
+          .attr("width", width)
+          .attr("height", height);
 
-        var projection = d3.geo.mercator()
-            // .scale(1122 * 2)
-            .scale(1250 * 2)
-            .center([-119.5, 37.2])
-            .translate([width / 2, height / 2]);
+      var projection = d3.geo.mercator()
+          // .scale(1122 * 2)
+          .scale(1250 * 2)
+          .center([-119.5, 37.2])
+          .translate([width / 2, height / 2]);
 
-        var path = d3.geo.path()
-            .projection(projection);
+      var path = d3.geo.path()
+          .projection(projection);
 
-        var q = d3_queue.queue();
-        q.defer(d3.csv, "data/CaliforniaData/cali_coverage.csv") //csv data
-        q.defer(d3.csv, "data/CaliforniaData/cali_measles.csv") //do I load two diff sets for two diff data
-        q.defer(d3.json, "data/CaliforniaData/Californ2.topojson")
-        q.defer(d3.json, "data/CaliforniaData/californiapropsymbol.topojson") //spatial data
-        q.await(callback);
+      var q = d3_queue.queue();
+      q.defer(d3.csv, "data/CaliforniaData/cali_coverage.csv") //csv data
+      q.defer(d3.csv, "data/CaliforniaData/cali_measles.csv") //do I load two diff sets for two diff data
+      q.defer(d3.json, "data/CaliforniaData/Californ2.topojson")
+      q.defer(d3.json, "data/CaliforniaData/californiapropsymbol.topojson") //spatial data
+      q.await(callback);
 
-        function callback(error, dataCoverage, dataMeasles, california, californiacenters) {
-            var caliCounties = topojson.feature(california, california.objects.Californ).features;
-            for (var i = 0; i < dataMeasles.length; i++) {
-                var csvCounty = dataMeasles[i];
-                var csvCountyCode = csvCounty.adm;
-                var jsonCounties = california.objects.Californ.geometries;
-                for (var j = 0; j < jsonCounties.length; j++) {
-                    if (jsonCounties[j].properties.adm == csvCountyCode) {
-                        for (var key in keyArray2) {
-                            var attribute = keyArray2[key];
-                            var value = parseFloat(csvCounty[attribute]);
-                            (jsonCounties[j].properties[attribute]) = value;
-                        }
-                    }
-                }
-            };
+      function callback(error, dataCoverage, dataMeasles, california, californiacenters) {
+          var caliCounties = topojson.feature(california, california.objects.Californ).features;
+          for (var i = 0; i < dataMeasles.length; i++) {
+              var csvCounty = dataMeasles[i];
+              var csvCountyCode = csvCounty.adm;
+              var jsonCounties = california.objects.Californ.geometries;
+              for (var j = 0; j < jsonCounties.length; j++) {
+                  if (jsonCounties[j].properties.adm == csvCountyCode) {
+                      for (var key in keyArray2) {
+                          var attribute = keyArray2[key];
+                          var value = parseFloat(csvCounty[attribute]);
+                          (jsonCounties[j].properties[attribute]) = value;
+                      }
+                  }
+              }
+          };
 
-            for (var i = 0; i < dataCoverage.length; i++) {
-                var csvCounty = dataCoverage[i];
-                var csvCountyCode = csvCounty.adm;
-                var jsonCounties = california.objects.Californ.geometries;
-                for (var j = 0; j < jsonCounties.length; j++) {
-                    if (jsonCounties[j].properties.adm == csvCountyCode) {
-                        for (var key in keyArray) {
-                            var attribute = keyArray[key];
-                            var value = parseFloat(csvCounty[attribute]);
-                            (jsonCounties[j].properties[attribute]) = value;
+          for (var i = 0; i < dataCoverage.length; i++) {
+              var csvCounty = dataCoverage[i];
+              var csvCountyCode = csvCounty.adm;
+              var jsonCounties = california.objects.Californ.geometries;
+              for (var j = 0; j < jsonCounties.length; j++) {
+                  if (jsonCounties[j].properties.adm == csvCountyCode) {
+                      for (var key in keyArray) {
+                          var attribute = keyArray[key];
+                          var value = parseFloat(csvCounty[attribute]);
+                          (jsonCounties[j].properties[attribute]) = value;
 
-                        }
-                    }
-                }
-            }
-            addVCLegend();
-            addPBELegend();
-            setEnumerationUnits(caliCounties, californiacenters, CAmap, path);
-            selectLayer(caliCounties, californiacenters, dataMeasles, CAmap, path);
-        }
+                      }
+                  }
+              }
+          }
+          addVCLegend();
+          addPBELegend();
+          setEnumerationUnits(caliCounties, californiacenters, CAmap, path);
+          selectLayer(caliCounties, californiacenters, dataMeasles, CAmap, path);
+      }
 
     };
 
