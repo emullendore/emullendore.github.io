@@ -429,4 +429,7 @@ footer a {
   .content-container {
     padding: 3em 3em;
   }
+  img#logo {
+    height: 6em;
+  }
 }
