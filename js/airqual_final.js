@@ -1,25 +1,25 @@
 function createMap() {
     //set panning bounds
     var bounds = [
-        [19, -130],
+        [19, -135],
         [55, -30]
     ]
     var map = L.map('map3', {
         center: [38, -99],
-        zoom: 4,
+        zoom: 3,
         doubleClickZoom: false,
         maxBounds: bounds
     });
 
-    L.tileLayer('https://b.tiles.mapbox.com/v4/emullendore.p7n4hkl0/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZW11bGxlbmRvcmUiLCJhIjoiY2lranhtcXQ4MDkya3Z0a200aGk0ZGRzMyJ9.zybsg8x8T8dh7mOgqTLiTg', {
+    L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png', {
 
     }).addTo(map);
 
     getData(map);
 
     //create map, specifying tile source, center, and zoom of map
-    map.options.maxZoom = 8;
-    map.options.minZoom = 4;
+    map.options.maxZoom = 6;
+    map.options.minZoom = 3;
 
 };
 
@@ -57,12 +57,14 @@ function pointToLayer(features, latlng, attributes) {
     //set initial condition that if >75 (above Ambient Air Quality Standards), indicate
     if (features.properties[attribute] > 75) {
         var line = {
-            color: 'darkorange'
+            color: 'darkorange',
+            wieght: 1.5
         }
         layer.setStyle(line);
     } else {
         var line = {
-            color: "grey"
+            color: "lightgrey",
+            weight: 1.5
         }
         layer.setStyle(line);
     }
@@ -70,9 +72,15 @@ function pointToLayer(features, latlng, attributes) {
     layer.on({
         mouseover: function() {
             this.openPopup();
+            this.setStyle({
+                weight: 3
+            })
         },
         mouseout: function() {
             this.closePopup();
+            this.setStyle({
+                weight: 1.5
+            })
         },
 
     });
@@ -150,10 +158,10 @@ function processData(data) {
 //5th Operator: overlay of coal-fired power plants
 function addCoalPlants(response, map) {
     var pPlantMarkerOptions = {
-        radius: 5,
+        radius: 6,
         fillColor: "steelblue",
         color: "darkslategray",
-        buffer: 3,
+        // buffer: 3,
         weight: 0.6,
         opacity: 1,
         fillOpacity: 1
@@ -166,6 +174,7 @@ function addCoalPlants(response, map) {
             var layer2 = L.circleMarker(latlng, pPlantMarkerOptions)
             var popupContent = "<p><b>City: </b>" + feature.properties.desc + "</p>"
             popupContent += "<p><b>Plant: </b>" + feature.properties.PlantName + "</p>"
+            
             //add functionality to button to add/remove layer2
             $('#overlayButton').click(function() {
                 if (map.hasLayer(layer2)) {
@@ -175,16 +184,17 @@ function addCoalPlants(response, map) {
                 }
             });
             //bind popup content to layer2
-            layer2.bindPopup(popupContent);
-            // layer2.on({
-            //     //provide functionality for mouseover and mouseout
-            //     mouseover: function() {
-            //         this.openPopup();
-            //     },
-            //     mouseout: function() {
-            //         this.closePopup();
-            //     }
-            // });
+            layer2.bindPopup(popupContent, {'offset': L.point(0, -5)});
+            window.layer2 = layer2
+            layer2.on({
+                //provide functionality for mouseover and mouseout
+                mouseover: function() {
+                    this.openPopup();
+                },
+                mouseout: function() {
+                    this.closePopup();
+                }
+            });
             return layer2;
         }
     }).addTo(map);
@@ -212,7 +222,7 @@ function createLegend(map, attributes) {
             };
             for (var circle in circles) {
                 //style circles
-                svg += '<circle class="legend-circle" id="' + circle + '" fill="#828282" fill-opacity="0.14" stroke="grey" cx="70"/>';
+                svg += '<circle class="legend-circle" id="' + circle + '" fill="#828282" fill-opacity="0.14" stroke="white" cx="70"/>';
                 //text string
                 svg += '<text id="' + circle + '-text" x="150" y="' + circles[circle] + '"></text>';
             }
